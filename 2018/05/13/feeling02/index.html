@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <title>最近的日子太苦了,我想把自己关起来 | Victory Chris</title>
-  <meta name="description" content="" />
+  <meta name="description" content="Victory Chris" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -242,6 +242,8 @@
         <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
+                <li><a href="http://yoursite.com/2018/10/02/valine/">快给你的Hexo添加一个valine评论吧~</a></li>
+            
                 <li><a href="http://yoursite.com/2018/10/01/Markdown/">献给读者的 Markdown 新手指南</a></li>
             
                 <li><a href="http://yoursite.com/2017/12/23/feeling01/">人生若只如初见</a></li>
@@ -259,6 +261,16 @@
 
                 
 
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
                 
             
 
@@ -353,7 +365,7 @@
                 
                     <li><a class="flat-box" href="/categories/Diary/"><div class='name'>Diary</div><div class='badge'>2</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Program/"><div class='name'>Program</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/Program/"><div class='name'>Program</div><div class='badge'>2</div></a></li>
                 
             </ul>
         
@@ -366,7 +378,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/feeling/" style="font-size: 24px; color: #555">feeling</a>
+            <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/feeling/" style="font-size: 24px; color: #555">feeling</a>
         </div>
     </section>
 
@@ -509,6 +521,30 @@
 
     
     
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = ''.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BWqbx8MifAocA3XIpXhXHvjj-gzGzoHsz",
+                appKey: "XB7Gqmy3sH8VMNlDxlNEfjiO",
+                placeholder: "来了不留点啥？ヾﾉ≧∀≦)o",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
     
 
 

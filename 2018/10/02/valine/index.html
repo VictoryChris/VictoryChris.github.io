@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2018/5 | Victory Chris</title>
+  <title>快给你的Hexo添加一个valine评论吧~ | Victory Chris</title>
   <meta name="description" content="Victory Chris" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -134,62 +134,150 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-valine" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-	
-    <script>
-        window.subData= { title:'year : 2018.5'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/05/13/feeling02/">
-                
-                    最近的日子太苦了,我想把自己关起来
-                
-            </a>
-        </h2>
+                快给你的Hexo添加一个valine评论吧~
+            
+        </h1>
         <time>
-            2018-05-13
+            2018-10-02&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/Diary/">Diary</a>
+        <a href="/categories/Program/">Program</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <h3 id="谈梦想"><a href="#谈梦想" class="headerlink" title="谈梦想"></a>谈梦想</h3><p>   克里斯前段时间找到我，对我说:”以前的梦总是很满，装不下的梦还有很多。”我说:”克里斯，如果你心中有该放下的事，你就理应学会拿的起，放的下，因为只有这样你才不会让自己活的那么累。”维克利曾经也对克里斯说过这样的话:”你的优秀，使你拥有的太多，你不懂得取舍，失去的也将会越多，最后就连你自己原先的模样都丢失了。”</p>
-        
-            <div class="readmore">
-                <a href="/2018/05/13/feeling02/" class="flat-box">READ MORE</a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/feeling/"><i class="fa fa-tag fa-fw"></i>&nbsp;feeling</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天给大家推荐一个简洁，方便，好用的评论系统，没错那就是：Valine</p>
+<h4 id="Valine简介"><a href="#Valine简介" class="headerlink" title="Valine简介"></a>Valine简介</h4><p>Hexo的评论系统有很多，常见的有以下几个</p>
+<a id="more"></a>
+<ul>
+<li><del>多说</del></li>
+<li><del>网易云跟帖</del></li>
+<li>畅言</li>
+<li>来必力（LiveRe）</li>
+<li>Disqus</li>
+<li>Hypercomments</li>
+<li>valine</li>
+</ul>
+<p>本来博主不打算要评论功能的，后来发现了Valine的简洁化，我非常的喜欢，免去了用户的登录注册，就可以实现匿名评论，也就是本篇要讲的——Valine.js。</p>
+<h4 id="开启Valine"><a href="#开启Valine" class="headerlink" title="开启Valine"></a><a href="https://valine.js.org/" target="_blank" rel="noopener">开启Valine</a></h4><h4 id="注册Leancloud"><a href="#注册Leancloud" class="headerlink" title="注册Leancloud"></a><a href="https://leancloud.cn/" target="_blank" rel="noopener">注册Leancloud</a></h4><p>我们的评论系统其实是放在Leancloud上的，因此首先需要去注册一个账号</p>
+<p>注册完以后需要创建一个应用，名字可以随便起，然后 进入应用-&gt;设置-&gt;应用key </p>
+<p>获取你的appid 和 appkey 如图所示：<br><img src="http://s1.wailian.download/2018/01/14/article_20180114.png" alt="enter image description here"></p>
+<p>拿到你的appid和appkey之后，打开主题配置文件 搜索 valine，填入appid 和 appkey </p>
+<p>我的配置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#valine评论</span><br><span class="line">valine:</span><br><span class="line">  enable: true # 如果你想用Valine评论系统，请设置enable为true</span><br><span class="line">  appId:   # 必填</span><br><span class="line">  appKey:  # 必填</span><br><span class="line">  guest_info: #nick,mail,link #valine comment header info</span><br><span class="line">  placeholder: 来了不留点啥？ヾﾉ≧∀≦)o  # valine comment input placeholder</span><br><span class="line">  avatar: mp # gravatar style https://valine.js.org/avatar</span><br><span class="line">  pageSize: 10 # comment list page size</span><br><span class="line">  verify: false # valine verify code (true/false)</span><br><span class="line">  notify: false # valine mail notify (true/false)</span><br><span class="line">  lang: zh-cn</span><br></pre></td></tr></table></figure></p>
+<p>刷新一下~ 是不是就能看到评论框了？</p>
+<h4 id="评论数据管理"><a href="#评论数据管理" class="headerlink" title="评论数据管理"></a>评论数据管理</h4><p>插播一下，关于评论数据管理，请自行登录Leancloud应用管理。<br>具体步骤：登录&gt;选择你创建的应用&gt;存储&gt;选择ClassComment，然后就可以尽情的发挥你的权利啦(～￣▽￣)～<br><img src="https://ws1.sinaimg.cn/large/006qRazegy1fibb4pbvv4j31820iqjw0.jpg" alt="enter image description here"></p>
+<p>这样设置一下就可以了。不清楚的查看下面的链接也可以。</p>
+<p><a href="https://valine.js.org/" target="_blank" rel="noopener">valline详细配置官网</a></p>
+<p><a href="https://github.com/xCss/Valine/wiki/Valine-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E8%AE%BE%E7%BD%AE" target="_blank" rel="noopener">Valine 评论系统中的邮件提醒设置</a></p>
 
         </div>
-    
-</section>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/Hexo/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Hexo</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/01/Markdown/" rel="prev" title="献给读者的 Markdown 新手指南">
+                                    
+                                        献给读者的 Markdown 新手指南
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Markdown
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="http://yoursite.com/2018/10/01/Markdown/">献给读者的 Markdown 新手指南</a></li>
+            
+                <li><a href="http://yoursite.com/2018/05/13/feeling02/">最近的日子太苦了,我想把自己关起来</a></li>
+            
+                <li><a href="http://yoursite.com/2017/12/23/feeling01/">人生若只如初见</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 
 
+            
 
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: '快给你的Hexo添加一个valine评论吧~',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -322,6 +410,13 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Valine简介"><span class="toc-text">Valine简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开启Valine"><span class="toc-text">开启Valine</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册Leancloud"><span class="toc-text">注册Leancloud</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#评论数据管理"><span class="toc-text">评论数据管理</span></a></li></ol></li></ol>
+        </div>
+    </section>
+
 
     
 
@@ -417,6 +512,34 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = ''.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BWqbx8MifAocA3XIpXhXHvjj-gzGzoHsz",
+                appKey: "XB7Gqmy3sH8VMNlDxlNEfjiO",
+                placeholder: "来了不留点啥？ヾﾉ≧∀≦)o",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
 
 
     <script>setLoadingBarProgress(100);</script>

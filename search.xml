@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>快给你的Hexo添加一个valine评论吧~</title>
+      <link href="/2018/10/02/valine/"/>
+      <url>/2018/10/02/valine/</url>
+      
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天给大家推荐一个简洁，方便，好用的评论系统，没错那就是：Valine</p><h4 id="Valine简介"><a href="#Valine简介" class="headerlink" title="Valine简介"></a>Valine简介</h4><p>Hexo的评论系统有很多，常见的有以下几个</p><a id="more"></a><ul><li><del>多说</del></li><li><del>网易云跟帖</del></li><li>畅言</li><li>来必力（LiveRe）</li><li>Disqus</li><li>Hypercomments</li><li>valine</li></ul><p>本来博主不打算要评论功能的，后来发现了Valine的简洁化，我非常的喜欢，免去了用户的登录注册，就可以实现匿名评论，也就是本篇要讲的——Valine.js。</p><h4 id="开启Valine"><a href="#开启Valine" class="headerlink" title="开启Valine"></a><a href="https://valine.js.org/" target="_blank" rel="noopener">开启Valine</a></h4><h4 id="注册Leancloud"><a href="#注册Leancloud" class="headerlink" title="注册Leancloud"></a><a href="https://leancloud.cn/" target="_blank" rel="noopener">注册Leancloud</a></h4><p>我们的评论系统其实是放在Leancloud上的，因此首先需要去注册一个账号</p><p>注册完以后需要创建一个应用，名字可以随便起，然后 进入应用-&gt;设置-&gt;应用key </p><p>获取你的appid 和 appkey 如图所示：<br><img src="http://s1.wailian.download/2018/01/14/article_20180114.png" alt="enter image description here"></p><p>拿到你的appid和appkey之后，打开主题配置文件 搜索 valine，填入appid 和 appkey </p><p>我的配置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#valine评论</span><br><span class="line">valine:</span><br><span class="line">  enable: true # 如果你想用Valine评论系统，请设置enable为true</span><br><span class="line">  appId:   # 必填</span><br><span class="line">  appKey:  # 必填</span><br><span class="line">  guest_info: #nick,mail,link #valine comment header info</span><br><span class="line">  placeholder: 来了不留点啥？ヾﾉ≧∀≦)o  # valine comment input placeholder</span><br><span class="line">  avatar: mp # gravatar style https://valine.js.org/avatar</span><br><span class="line">  pageSize: 10 # comment list page size</span><br><span class="line">  verify: false # valine verify code (true/false)</span><br><span class="line">  notify: false # valine mail notify (true/false)</span><br><span class="line">  lang: zh-cn</span><br></pre></td></tr></table></figure></p><p>刷新一下~ 是不是就能看到评论框了？</p><h4 id="评论数据管理"><a href="#评论数据管理" class="headerlink" title="评论数据管理"></a>评论数据管理</h4><p>插播一下，关于评论数据管理，请自行登录Leancloud应用管理。<br>具体步骤：登录&gt;选择你创建的应用&gt;存储&gt;选择ClassComment，然后就可以尽情的发挥你的权利啦(～￣▽￣)～<br><img src="https://ws1.sinaimg.cn/large/006qRazegy1fibb4pbvv4j31820iqjw0.jpg" alt="enter image description here"></p><p>这样设置一下就可以了。不清楚的查看下面的链接也可以。</p><p><a href="https://valine.js.org/" target="_blank" rel="noopener">valline详细配置官网</a></p><p><a href="https://github.com/xCss/Valine/wiki/Valine-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E8%AE%BE%E7%BD%AE" target="_blank" rel="noopener">Valine 评论系统中的邮件提醒设置</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Program </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>献给读者的 Markdown 新手指南</title>
       <link href="/2018/10/01/Markdown/"/>
       <url>/2018/10/01/Markdown/</url>
